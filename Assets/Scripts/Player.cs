@@ -24,9 +24,11 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
-    
-    private void Update() {
-        if(dead){
+
+    private void Update()
+    {
+        if (dead)
+        {
             movement = Vector2.zero;
             anim.SetFloat("Velocity", 0);
             return;
@@ -39,13 +41,14 @@ public class Player : MonoBehaviour
 
         anim.SetFloat("velocity", movement.magnitude);
 
-        if(movement.x != 0)
+        if (movement.x != 0)
             facingDirection = movement.x > 0 ? 1 : -1;
 
         transform.localScale = new Vector2(facingDirection, 1);
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         rb.velocity = movement * moveSpeed;
     }
 }
