@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using Unity.Mathematics;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -50,5 +52,23 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = movement * moveSpeed;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // proverava da li nas je neprijatelj pipnuo
+    }
+
+    void Hit(int damage)
+    {
+        anim.SetTrigger("hit");
+        currentHealth -= damage;
+        healthText.text = Mathf.Clamp(currentHealth, 0, maxHealth).ToString();
+    }
+
+    void Die()
+    {
+        dead = true;
+        // poziva kraj igre
     }
 }
