@@ -9,7 +9,11 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: LiberationSans SDF Material
   m_Shader: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
+<<<<<<< Updated upstream
   m_ShaderKeywords: 
+=======
+  m_ShaderKeywords: OUTLINE_ON
+>>>>>>> Stashed changes
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -25,12 +29,20 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _ColorMask: 15
+<<<<<<< Updated upstream
+=======
+    - _CullMode: 0
+>>>>>>> Stashed changes
     - _FaceDilate: 0
     - _GradientScale: 10
     - _MaskSoftnessX: 0
     - _MaskSoftnessY: 0
     - _OutlineSoftness: 0
+<<<<<<< Updated upstream
     - _OutlineWidth: 0
+=======
+    - _OutlineWidth: 0.2
+>>>>>>> Stashed changes
     - _PerspectiveFilter: 0.875
     - _ScaleRatioA: 0.9
     - _ScaleRatioB: 1
@@ -7798,6 +7810,11 @@ Texture2D:
   m_TextureFormat: 1
   m_MipCount: 1
   m_IsReadable: 0
+<<<<<<< Updated upstream
+=======
+  m_IsPreProcessed: 0
+  m_IgnoreMasterTextureLimit: 0
+>>>>>>> Stashed changes
   m_StreamingMipmaps: 0
   m_StreamingMipmapsPriority: -92
   m_AlphaIsTransparency: 0
