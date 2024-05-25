@@ -3,52 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PlayerDataClass : MonoBehaviour
+public class PlayerDataClass 
 {
-    public static PlayerDataClass playerData;
 
+    public static List<int> PlayerItemList = new();
+    public static int PlayerHealth;
+    public static int PlayerDamage;
+    public static int PlayerArmor;
+    public static int PlayerSpeed;
+    public static int PlayerStage;
     
-    public int PlayerHealth;
-    public int PlayerDamage;
-    public int PlayerArmor;
-    public int PlayerSpeed;
-
-public static PlayerDataClass PlayerData
+    public static void SetPlayerData()
     {
-        get
-        {
-            // If the instance doesn't exist yet, create it
-            if (playerData == null)
-            {
-                // Look for an existing instance in the scene
-                playerData = FindObjectOfType<PlayerDataClass>();
-
-                // If no instance exists in the scene, create a new GameObject and attach the singleton script to it
-                if (playerData == null)
-                {
-                    GameObject singletonObject = new GameObject("PlayerDataClass");
-                    playerData = singletonObject.AddComponent<PlayerDataClass>();
-                    DontDestroyOnLoad(singletonObject); // Make sure the singleton persists between scene changes
-                }
-            }
-            return playerData;
-        }
         
-    }
-    private void Awake()
-    {
+
+
         // SVE OVO MORA IDE IZ DATABAZE
         PlayerHealth = 200;
         PlayerDamage = 10;
         PlayerArmor = 0;
         PlayerSpeed=5; 
+        PlayerStage=4;
+        Debug.Log("PlayerData initialized.");
+    }
+   
+        
+    
+//PLAYER UNLOCKED ITEMS 
+    public static void AddItem(int ItemID)
+    {
+        PlayerItemList.Add(ItemID);
+    }
 
-        Debug.Log("CharacterData initialized.");
+    public static void RemoveItem(int ItemID)
+    {
+        PlayerItemList.Remove(ItemID);
     }
 
     
+    
 
-
+   
     
 
 }

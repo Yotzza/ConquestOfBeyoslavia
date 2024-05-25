@@ -4,64 +4,42 @@ using Unity.VisualScripting;
 using UnityEditor.U2D.Animation;
 using UnityEngine;
 
-public class CharacterDataClass : MonoBehaviour
+public class CharacterDataClass 
 {
-    public static CharacterDataClass characterData;
-
+   
+    
     
     //charspeed = playerspeed*itemspeedmultipler
-    private int CharacterHealth;
+    public static int CharacterHealth;
     //charspeed = playerspeed*itemspeedmultipler
-    public int CharacterDamage;
+    public static int CharacterDamage;
     //charspeed = playerspeed*itemspeedmultipler
-    public int CharacterArmor;
+    public static int CharacterArmor;
     //charspeed = playerspeed*itemspeedmultipler
-    public int CharacterSpeed;
+    public static int CharacterSpeed;
 
-public static CharacterDataClass CharacterData
+    
+    
+
+    public static List<int> CharacterItems = new List<int>(){ 0, 0, 0 };
+
+
+   
+
+
+
+
+
+
+
+    
+
+    public static void SetCharacterData()
     {
-        get
-        {
-            // If the instance doesn't exist yet, create it
-            if (characterData == null)
-            {
-                // Look for an existing instance in the scene
-                characterData = FindObjectOfType<CharacterDataClass>();
-
-                // If no instance exists in the scene, create a new GameObject and attach the singleton script to it
-                if (characterData == null)
-                {
-                    GameObject singletonObject = new GameObject("CharacterDataClass");
-                    characterData = singletonObject.AddComponent<CharacterDataClass>();
-                    DontDestroyOnLoad(singletonObject); // Make sure the singleton persists between scene changes
-                }
-            }
-            return characterData;
-        }
-    }
-
-
-
-
-
-    //init values-gleda se playerdata
-    private void Awake()
-    {
-        // Example initialization
-        CharacterHealth = 100;
-        CharacterDamage = 10;
-        CharacterArmor = 0;
-        CharacterSpeed=5; 
-
-        Debug.Log("CharacterData initialized.");
-    }
-
-    public void SetCharacterData()
-    {
-        CharacterHealth = 100;
-        CharacterDamage = 10;
-        CharacterArmor = 0;
-        CharacterSpeed=5;
+        CharacterHealth = PlayerDataClass.PlayerHealth + GetCharacterEquipmentSkills(1);
+        CharacterDamage = PlayerDataClass.PlayerDamage + GetCharacterEquipmentSkills(2);
+        CharacterArmor = PlayerDataClass.PlayerArmor + GetCharacterEquipmentSkills(3);
+        CharacterSpeed=PlayerDataClass.PlayerSpeed + GetCharacterEquipmentSkills(4);
 
         Debug.Log("CharacterData set.");
 
@@ -69,13 +47,7 @@ public static CharacterDataClass CharacterData
     }
 
 
-public int GetCharacterHealth()
-    {
-        return CharacterHealth;
-    }
-
-
-public void CharacterTakeDamage(int damage)
+public static void CharacterTakeDamage(int damage)
     {
         
         CharacterHealth -= damage;
@@ -97,22 +69,57 @@ public void CharacterTakeDamage(int damage)
         
 }
 
-public void CharacterHeal(int health)
+public static void CharacterHeal(int health)
         {
 
             CharacterHealth += health;
-            if (CharacterHealth > PlayerDataClass.PlayerData.PlayerHealth){
-                CharacterHealth=PlayerDataClass.PlayerData.PlayerHealth;
+            if (CharacterHealth > PlayerDataClass.PlayerHealth){
+                //CharacterHealth=PlayerDataClass.playerData.PlayerHealth;
 
             }
 
         }
     
-public void Die()
+public static void Die()
     {
 
         
     }
+
+     
+    
+
+    public static void AddItem(int ItemID)
+    {
+        CharacterItems.Add(ItemID);
+    }
+
+    public static void RemoveItem(int ItemID)
+    {
+        CharacterItems.Remove(ItemID);
+    }
+    
+    public static int GetCharacterEquipmentSkills(int i)
+    {
+    int SkillSum=0;
+    
+        for (int j = 0; j < 3; j++){
+        //mozda mora checker dal ga ima
+        int itemnumber=CharacterItems[j];
+        if (itemnumber!=0){
+            SkillSum += Item.ItemStatGetter(i,Item.AllItemsList[itemnumber]);
+
+        }
+        else{
+            Debug.Log("no equipment in" + j + " slot");
+        }
+        
+        
+        
+        }
+            return SkillSum;
+    }
+
 }
 
 

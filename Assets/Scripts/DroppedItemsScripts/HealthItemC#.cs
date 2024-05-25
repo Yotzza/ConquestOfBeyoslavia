@@ -8,9 +8,9 @@ public class ItemHeal : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        CharacterDataClass.CharacterData.CharacterHeal(HealAmount);
+        //CharacterDataClass.CharacterData.CharacterHeal(HealAmount);
         
-        Debug.Log(CharacterDataClass.CharacterData.GetCharacterHealth());
+       // Debug.Log(CharacterDataClass.CharacterData.GetCharacterHealth());
 
         Destroy(gameObject);
     }

@@ -8,7 +8,7 @@ public class DamageDealer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        CharacterDataClass.CharacterData.CharacterTakeDamage(damageAmount);
-        Debug.Log(CharacterDataClass.CharacterData.GetCharacterHealth());
+        CharacterDataClass.CharacterTakeDamage(damageAmount);
+        Debug.Log(CharacterDataClass.CharacterHealth);
     }
 }

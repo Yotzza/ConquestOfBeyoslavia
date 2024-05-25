@@ -10,8 +10,23 @@ EditorBuildSettings:
     guid: 17fbee2f80fc42446b8735117127fb68
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: cedc720ff5446934aae488f341baffa6
   - enabled: 1
     path: Assets/Scenes/PlayerSlot Menu.unity
     guid: 68a37929fc781a642bfead510155f4bf
+  - enabled: 1
+    path: Assets/Scenes/LevelSelection.unity
+    guid: 5ffd994d8127a00459464a39210e0e04
+  - enabled: 1
+    path: Assets/Scenes/Inventory.unity
+    guid: 4b75e23a07133d94a8edaf5833bf039f
+  - enabled: 1
+    path: Assets/Scenes/Weapon.unity
+    guid: 9dac1ddc00e1e7b4abb1a1695ce4bab2
+  - enabled: 1
+    path: Assets/Scenes/Armor.unity
+    guid: 7cfa11fe6b52cb7458bc2a5ac96f7205
+  - enabled: 1
+    path: Assets/Scenes/Equipment.unity
+    guid: fb132a9def0231140ae3007e869e0e64
   m_configObjects: {}
