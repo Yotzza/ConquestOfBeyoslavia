@@ -36,6 +36,7 @@ public class Map : MonoBehaviour
                 {
                     
                     buttonImage.color = greenColor;
+                    
                     button.interactable = true;
                 }
                 else if (PlayerDataClass.PlayerStage==i)
