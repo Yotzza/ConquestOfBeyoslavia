@@ -33,7 +33,7 @@ public class EnemyManager : MonoBehaviour
     //random pos za spawnovanje
     Vector2 RandomPosition()
     {
-        return new Vector2(Random.Range(-16, 16), Random.Range(-8, 8));
+        return new Vector2(Random.Range(-30, 30), Random.Range(-20, 20));
     }
 
     void SpawnEnemy()
