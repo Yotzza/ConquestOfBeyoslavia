@@ -64,9 +64,9 @@ public class Player : MonoBehaviour
 
     void Hit(int damage)
     {
-        anim.SetTrigger("hit");
-        currentHealth -= damage;
-        healthText.text = Mathf.Clamp(currentHealth, 0, maxHealth).ToString();
+        anim.SetTrigger("Hit");
+        CharacterDataClass.CharacterTakeDamage(damage);
+        Debug.Log(CharacterDataClass.CharacterHealth);
     }
 
     void Die()
