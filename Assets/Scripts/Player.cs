@@ -56,7 +56,10 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // proverava da li nas je neprijatelj pipnuo
+        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+
+        if (enemy != null)
+            Hit(20);
     }
 
     void Hit(int damage)

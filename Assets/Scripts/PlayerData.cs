@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PlayerDataClass 
+public class PlayerDataClass
 {
 
     public static List<int> PlayerItemList = new();
@@ -18,22 +18,22 @@ public class PlayerDataClass
 
     public static void SetPlayerData()
     {
-        
+
 
 
         // SVE OVO MORA IDE IZ DATABAZE
         PlayerHealth = 200;
         PlayerDamage = 10;
         PlayerArmor = 0;
-        PlayerSpeed=5; 
-        PlayerStage=1;
-        PlayerExp=200;
+        PlayerSpeed = 5;
+        PlayerStage = 1;
+        PlayerExp = 200;
         Debug.Log("PlayerData initialized.");
     }
-   
-        
-    
-//PLAYER UNLOCKED ITEMS 
+
+
+
+    //PLAYER UNLOCKED ITEMS 
     public static void AddItem(int ItemID)
     {
         PlayerItemList.Add(ItemID);
@@ -43,13 +43,6 @@ public class PlayerDataClass
     {
         PlayerItemList.Remove(ItemID);
     }
-
-    
-    
-
-   
-    
-
 }
 
 
