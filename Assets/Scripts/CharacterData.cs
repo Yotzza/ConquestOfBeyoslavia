@@ -107,6 +107,7 @@ public static void Die()
         //mozda mora checker dal ga ima
         int itemnumber=CharacterItems[j];
         if (itemnumber!=0){
+            Debug.Log("YES equipment in" + j + " slot");
             SkillSum += Item.ItemStatGetter(i,Item.AllItemsList[itemnumber]);
 
         }

@@ -12,7 +12,10 @@ public class PlayerDataClass
     public static int PlayerArmor;
     public static int PlayerSpeed;
     public static int PlayerStage;
-    
+    public static int PlayerExp;
+    public static int PlayerSkillPoints;
+    public static int PlayerLevel;
+
     public static void SetPlayerData()
     {
         
@@ -23,7 +26,8 @@ public class PlayerDataClass
         PlayerDamage = 10;
         PlayerArmor = 0;
         PlayerSpeed=5; 
-        PlayerStage=4;
+        PlayerStage=1;
+        PlayerExp=200;
         Debug.Log("PlayerData initialized.");
     }
    
