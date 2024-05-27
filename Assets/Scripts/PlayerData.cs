@@ -12,6 +12,7 @@ public class PlayerDataClass
     public static int PlayerArmor;
     public static int PlayerSpeed;
     public static int PlayerStage;
+
     public static int PlayerExp;
     public static int PlayerSkillPoints;
     public static int PlayerLevel;
@@ -43,6 +44,18 @@ public class PlayerDataClass
     {
         PlayerItemList.Remove(ItemID);
     }
+ 
+ //TREBA SE STAVI NEGDE OVO
+    public static void ExpChecker()
+    {
+        if (PlayerExp>=1000){
+            PlayerExp-=1000;
+            PlayerLevel+=1;
+            PlayerSkillPoints+=1;
+            Debug.Log("Level up");
+        }
+    }
+
 }
 
 

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Unity.VisualStudio.Editor;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,9 +12,9 @@ public class HealthBarScaling : MonoBehaviour
     public Text uiText;
     public void changer()
     {
-        uiText.text = CharacterDataClass.CharacterHealth + "/" + PlayerDataClass.PlayerHealth;
+        uiText.text = CharacterDataClass.CharacterHealth + "/" + (PlayerDataClass.PlayerHealth + CharacterDataClass.GetCharacterEquipmentSkills(1));
         Debug.Log((float)CharacterDataClass.CharacterHealth / PlayerDataClass.PlayerHealth);
-        targetImage.fillAmount = (float)CharacterDataClass.CharacterHealth / PlayerDataClass.PlayerHealth;
+        targetImage.fillAmount = (float)CharacterDataClass.CharacterHealth / (PlayerDataClass.PlayerHealth + CharacterDataClass.GetCharacterEquipmentSkills(1));
 
     }
 

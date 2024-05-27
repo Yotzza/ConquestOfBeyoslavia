@@ -11,8 +11,7 @@ public class Player : MonoBehaviour
     Animator anim;
     Rigidbody2D rb;
 
-    int maxHealth = 100;
-    int currentHealth;
+    
 
     bool dead = false;
 

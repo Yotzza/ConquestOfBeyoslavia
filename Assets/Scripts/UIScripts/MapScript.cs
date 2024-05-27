@@ -55,6 +55,7 @@ public class Map : MonoBehaviour
                 {
                     buttonImage.color = redColor;
                     button.interactable = false;
+                    
                 }
             
         }
