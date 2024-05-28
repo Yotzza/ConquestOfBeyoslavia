@@ -21,5 +21,9 @@ public class SceneSwitchButtons : MonoBehaviour
     {
         SceneManager.LoadScene("Equipment");
     }
+    public static void LoadCustomization()
+    {
+        SceneManager.LoadScene("Customization");
+    }
     
 }

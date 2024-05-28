@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 
@@ -17,18 +18,27 @@ public class PlayerDataClass
     public static int PlayerSkillPoints;
     public static int PlayerLevel;
 
+    public static string PlayerColorHex;
+    public static int PlayerFaceID;
+
     public static void SetPlayerData()
     {
 
 
 
         // SVE OVO MORA IDE IZ DATABAZE
+        PlayerFaceID=0;
+        PlayerColorHex="#FF5733";
         PlayerHealth = 200;
         PlayerDamage = 10;
         PlayerArmor = 0;
         PlayerSpeed = 5;
         PlayerStage = 1;
         PlayerExp = 200;
+
+        PlayerSkillPoints=3;
+
+        PlayerFaceID=1;
         Debug.Log("PlayerData initialized.");
     }
 
@@ -54,6 +64,13 @@ public class PlayerDataClass
             PlayerSkillPoints+=1;
             Debug.Log("Level up");
         }
+    }
+
+    public static Sprite FaceImageChanger(int faceid)
+    {
+        string imagePath = "PlayerModel/" + faceid;
+        Sprite newSprite = Resources.Load<Sprite>(imagePath);
+        return newSprite;
     }
 
 }

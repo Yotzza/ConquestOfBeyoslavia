@@ -44,20 +44,25 @@ public class SkillUpgrade : MonoBehaviour
         {
         debounce=true;
         if (PlayerDataClass.PlayerSkillPoints>=1)
+        {
 {
     switch (SkillGroup)
     {
         case 1:
             PlayerDataClass.PlayerHealth+=10;
+            Debug.Log("Added PlayerHealth");
             break;
         case 2:
             PlayerDataClass.PlayerDamage+=2;
+            Debug.Log("Added PlayerDamage");
             break;
         case 3:
             PlayerDataClass.PlayerArmor+=1;
+            Debug.Log("Added PlayerArmor");
             break;
         case 4:
              PlayerDataClass.PlayerSpeed+=1;
+             Debug.Log("Added PlayerSpeed");
              break;
         default:
             Debug.Log("Default case");
@@ -66,7 +71,7 @@ public class SkillUpgrade : MonoBehaviour
             
     }
 
-
+}
 }
 else
 {

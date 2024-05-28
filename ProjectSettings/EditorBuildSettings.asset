@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Equipment.unity
     guid: fb132a9def0231140ae3007e869e0e64
+  - enabled: 1
+    path: Assets/Scenes/Customization.unity
+    guid: fc3de026db4e56f4781290081196d4ba
+  - enabled: 1
+    path: Assets/Scenes/YouDiedScene.unity
+    guid: f9d8c19e0f9ad5345bc91f7e39860aa7
+  - enabled: 1
+    path: Assets/Scenes/StageClearScene.unity
+    guid: 9902af3f652c6d34bbd532386ab78ff8
   m_configObjects: {}

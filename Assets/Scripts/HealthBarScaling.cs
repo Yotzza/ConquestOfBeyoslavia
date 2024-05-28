@@ -13,7 +13,7 @@ public class HealthBarScaling : MonoBehaviour
     public void changer()
     {
         uiText.text = CharacterDataClass.CharacterHealth + "/" + (PlayerDataClass.PlayerHealth + CharacterDataClass.GetCharacterEquipmentSkills(1));
-        Debug.Log((float)CharacterDataClass.CharacterHealth / PlayerDataClass.PlayerHealth);
+        
         targetImage.fillAmount = (float)CharacterDataClass.CharacterHealth / (PlayerDataClass.PlayerHealth + CharacterDataClass.GetCharacterEquipmentSkills(1));
 
     }

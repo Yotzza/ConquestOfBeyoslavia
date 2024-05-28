@@ -12,7 +12,7 @@ public class Map : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerDataClass.SetPlayerData();
+        //PlayerDataClass.SetPlayerData();
         // Get the transform of the current GameObject
         Transform parentTransform = this.transform;
        

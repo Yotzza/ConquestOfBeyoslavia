@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     {
         Item.InitializeItems();
         // Ensure the CharacterDataClass instance is created at the start of the game
-        PlayerDataClass.SetPlayerData();
+        //PlayerDataClass.SetPlayerData();
 
         CharacterDataClass.SetCharacterData();
         
