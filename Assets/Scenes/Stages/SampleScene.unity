@@ -1829,7 +1829,7 @@ MonoBehaviour:
   playerAnim: {fileID: 1067184057}
   attackDelay: 0.5
   weaponTransform: {fileID: 685148147}
-  weaponRange: 3
+  weaponRange: 2
   weaponDamage: 30
   enemyLayer:
     serializedVersion: 2
@@ -2174,7 +2174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6bb400685e927a469f992ecd2506dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3488514399024152652, guid: 8fc6f6b8693cf7e49b1c10783214f3a3, type: 3}
+  enemyPrefab1: {fileID: 0}
+  enemyPrefab2: {fileID: 0}
+  enemyPrefab3: {fileID: 0}
   timeBetweenSpawns: 0.5
 --- !u!1 &1914261769
 GameObject:
