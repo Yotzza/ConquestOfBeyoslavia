@@ -27,13 +27,14 @@ public class MeleeAttack : MonoBehaviour
         {
             debounce = true;
             playerAnim.Play("SwordSlash");
+            yield return new WaitForSeconds(0.3f);
             Collider2D[] enemy = Physics2D.OverlapCircleAll(weaponTransform.position, weaponRange, enemyLayer);
-            yield return new WaitForSeconds(attackDelay);
-            debounce = false;
             for (int i = 0; i < enemy.Length; i++)
             {
                 enemy[i].GetComponent<Enemy>().Hit(weaponDamage);
             }
+            yield return new WaitForSeconds(attackDelay);
+            debounce = false;
         }
     }
 

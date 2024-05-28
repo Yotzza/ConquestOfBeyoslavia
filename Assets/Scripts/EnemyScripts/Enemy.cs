@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int speed = 2;
+    public int maxHealth;
+    public int speed;
+    public int damage;
 
     private int currentHealth;
 

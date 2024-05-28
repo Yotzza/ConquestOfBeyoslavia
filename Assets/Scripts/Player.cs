@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     Animator anim;
     Rigidbody2D rb;
 
-    
+
 
     bool dead = false;
 
@@ -58,7 +58,8 @@ public class Player : MonoBehaviour
         Enemy enemy = collision.gameObject.GetComponent<Enemy>();
 
         if (enemy != null)
-            Hit(20);
+            Hit(enemy.damage);
+
     }
 
     void Hit(int damage)
