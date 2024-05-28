@@ -5,7 +5,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] GameObject enemyPrefab1;
     [SerializeField] GameObject enemyPrefab2;
     [SerializeField] GameObject enemyPrefab3;
-
+    
     [SerializeField] float timeBetweenSpawns = 0.5f;
     float currentTimeBetweenSpawns;
 
@@ -42,7 +42,7 @@ public class EnemyManager : MonoBehaviour
     void SpawnEnemy()
     {
         //Quaternion ignorise rotacije.
-        var e = Instantiate(enemyPrefab2, RandomPosition(), Quaternion.identity);
+        var e = Instantiate(enemyPrefab1, RandomPosition(), Quaternion.identity);
         e.transform.SetParent(enemiesParent);
     }
 

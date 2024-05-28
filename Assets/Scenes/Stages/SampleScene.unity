@@ -1750,7 +1750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d014f006ac7cf2441b05c9e0c455f26e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 0}
+  weapon: {fileID: 316561837}
   moveSpeed: 5
 --- !u!50 &1067184060
 Rigidbody2D:
@@ -2174,7 +2174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6bb400685e927a469f992ecd2506dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab1: {fileID: 0}
+  enemyPrefab1: {fileID: 3488514399024152652, guid: 8fc6f6b8693cf7e49b1c10783214f3a3, type: 3}
   enemyPrefab2: {fileID: 0}
   enemyPrefab3: {fileID: 0}
   timeBetweenSpawns: 0.5

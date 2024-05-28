@@ -9,6 +9,7 @@ public class RaceButton : MonoBehaviour
 
     public void OnPressed(){
         PlayerDataClass.PlayerColorHex=HexColor;
+        Debug.Log(PlayerDataClass.PlayerColorHex);
 
     }
 }

@@ -5,7 +5,7 @@ using System;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI healthText;
+    public SpriteRenderer weapon;
     [SerializeField] float moveSpeed = 6;
 
     Animator anim;
@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        WeaponSpriteChanger();
     }
 
     private void Update()
@@ -73,5 +74,12 @@ public class Player : MonoBehaviour
     {
         dead = true;
         // poziva kraj igre
+    }
+
+
+    public void WeaponSpriteChanger(){
+        string imagePath = "Weapon/" + CharacterDataClass.CharacterItems[0];
+        Sprite newSprite = Resources.Load<Sprite>(imagePath);
+        weapon.sprite=newSprite;
     }
 }
