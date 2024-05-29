@@ -18,6 +18,9 @@ public class CharacterDataClass
     //charspeed = playerspeed*itemspeedmultipler
     public static int CharacterSpeed;
 
+    public static int CharacterLevel;
+
+    public static int CharacterStage;
 
 
 
@@ -98,13 +101,13 @@ public class CharacterDataClass
             int itemnumber = CharacterItems[j];
             if (itemnumber != 0)
             {
-                Debug.Log("YES equipment in" + j + " slot");
+                //Debug.Log("YES equipment in" + j + " slot");
                 SkillSum += Item.ItemStatGetter(i, Item.AllItemsList[itemnumber]);
 
             }
             else
             {
-                Debug.Log("no equipment in" + j + " slot");
+               // Debug.Log("no equipment in" + j + " slot");
             }
 
 

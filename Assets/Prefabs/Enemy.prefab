@@ -230,6 +230,7 @@ MonoBehaviour:
   maxHealth: 100
   speed: 4
   damage: 100
+  expdrop: 50
 --- !u!95 &303753251887884453
 Animator:
   serializedVersion: 5

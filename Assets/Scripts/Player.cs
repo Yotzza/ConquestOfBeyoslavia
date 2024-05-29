@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
 
     void Hit(int damage)
     {
-        anim.SetTrigger("Hit");
+        anim.SetTrigger("hit");
         CharacterDataClass.CharacterTakeDamage(damage);
         Debug.Log(CharacterDataClass.CharacterHealth);
     }

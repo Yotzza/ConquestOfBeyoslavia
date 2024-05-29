@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour
     public int maxHealth;
     public int speed;
     public int damage;
+    public int expdrop;
+
 
     private int currentHealth;
 
@@ -35,13 +37,20 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Hit(int damage)
+    public void Hit()
     {
-        currentHealth -= damage;
+        currentHealth -= 20;
+        Debug.Log(currentHealth);
         anim.SetTrigger("hit");
-
-        if (currentHealth <= 0)
-            Destroy(gameObject);
+        
+        if (currentHealth <= 0){
+        PlayerDataClass.PlayerExp+=expdrop;
+        Debug.Log(PlayerDataClass.PlayerExp);
+        Destroy(gameObject);
+        }
+        
+            
+            
     }
 
 }

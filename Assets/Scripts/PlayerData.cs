@@ -4,7 +4,7 @@ using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 
-public class PlayerDataClass
+public  class PlayerDataClass
 {
 
     public static List<int> PlayerItemList = new();
@@ -24,8 +24,10 @@ public class PlayerDataClass
     public static void SetPlayerData()
     {
 
+        PlayerItemList.Add(0);
+    PlayerItemList.Add(3);
 
-
+Debug.Log(PlayerDataClass.PlayerItemList[0]);
         // SVE OVO MORA IDE IZ DATABAZE
         PlayerFaceID=0;
         PlayerColorHex="#FF5733";
@@ -33,7 +35,7 @@ public class PlayerDataClass
         PlayerDamage = 10;
         PlayerArmor = 0;
         PlayerSpeed = 5;
-        PlayerStage = 1;
+        PlayerStage = 0;
         PlayerExp = 200;
 
         PlayerSkillPoints=3;

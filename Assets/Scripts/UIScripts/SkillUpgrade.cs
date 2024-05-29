@@ -38,6 +38,11 @@ public class SkillUpgrade : MonoBehaviour
         }
     }
 
+
+    void Update(){
+        TextChanger();
+    }
+
     public void SkillUp(){
       
     if (debounce==false)
@@ -45,15 +50,17 @@ public class SkillUpgrade : MonoBehaviour
         debounce=true;
         if (PlayerDataClass.PlayerSkillPoints>=1)
         {
+            PlayerDataClass.PlayerSkillPoints-=1;
 {
     switch (SkillGroup)
     {
+        
         case 1:
             PlayerDataClass.PlayerHealth+=10;
             Debug.Log("Added PlayerHealth");
             break;
         case 2:
-            PlayerDataClass.PlayerDamage+=2;
+            PlayerDataClass.PlayerDamage+=5;
             Debug.Log("Added PlayerDamage");
             break;
         case 3:
@@ -70,6 +77,7 @@ public class SkillUpgrade : MonoBehaviour
             
             
     }
+    debounce=false;
 
 }
 }

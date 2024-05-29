@@ -21,4 +21,16 @@ public class NewBehaviourScript : MonoBehaviour
         }
 
     }
+    void Update(){
+if (i==0){
+            uiText.text="Experience: "+ PlayerDataClass.PlayerExp + "/1000";
+
+
+        }
+        else if(i==1){
+            uiText.text="Available Skills Points: "+ PlayerDataClass.PlayerSkillPoints;
+
+        }
+
+    }
 }

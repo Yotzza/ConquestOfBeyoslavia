@@ -269,6 +269,8 @@ GameObject:
   - component: {fileID: 216239986}
   - component: {fileID: 216239985}
   - component: {fileID: 216239984}
+  - component: {fileID: 216239988}
+  - component: {fileID: 216239987}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -340,9 +342,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1654139893}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 216239988}
+        m_TargetAssemblyTypeName: SceneSwitchButtons, Assembly-CSharp
+        m_MethodName: LoadLevelSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -390,6 +392,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216239982}
   m_CullTransparentMesh: 1
+--- !u!114 &216239987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216239982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd537773adc18b6418fe9e7134bec7bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &216239988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216239982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb11b9a6c69c53e4382bf20ecd512d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &244581493
 GameObject:
   m_ObjectHideFlags: 0

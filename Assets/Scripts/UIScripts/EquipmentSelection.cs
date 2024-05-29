@@ -9,19 +9,20 @@ public class GUIItemSelectionEnablerClass : MonoBehaviour
     public int EquipmentLevel;//(ovo je od 0 ili 2)
     public int CurrentEquipment;//(ovo ide od 0 do 30)
     public Button myButton;
-    void Awake()
+    void Start()
     {
         
         var exists = PlayerDataClass.PlayerItemList.Contains(CurrentEquipment);
+        
         Debug.Log(exists);
         if (exists==true){
-            myButton.interactable = false;
+            myButton.interactable = true;
             Debug.Log("god");
             
         }
         else{
             
-            myButton.interactable = true;
+            myButton.interactable = false;
         }
         
     }       

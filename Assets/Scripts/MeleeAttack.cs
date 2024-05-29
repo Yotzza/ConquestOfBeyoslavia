@@ -31,7 +31,8 @@ public class MeleeAttack : MonoBehaviour
             Collider2D[] enemy = Physics2D.OverlapCircleAll(weaponTransform.position, weaponRange, enemyLayer);
             for (int i = 0; i < enemy.Length; i++)
             {
-                enemy[i].GetComponent<Enemy>().Hit(weaponDamage);
+                Debug.Log(CharacterDataClass.CharacterDamage);
+                enemy[i].GetComponent<Enemy>().Hit();
             }
             yield return new WaitForSeconds(attackDelay);
             debounce = false;
