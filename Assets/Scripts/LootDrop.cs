@@ -32,7 +32,7 @@ public class LootDrop : MonoBehaviour
 
         int ItemTier=possibleValues[randomIndex]+CharacterDataClass.CharacterStage;
         
-        
+
         Debug.Log(ItemTier);
         switch (ItemTier)
             {
@@ -46,8 +46,7 @@ public class LootDrop : MonoBehaviour
                     imagePath = "Equipment/" + ItemTier;
                     break;
                 default:
-                    Debug.LogError("SOMETHING WENT WRONG 405");
-                    break;
+                    
             }
         // Construct the path to the image based on the number
         
@@ -56,8 +55,22 @@ public class LootDrop : MonoBehaviour
         Sprite newSprite = Resources.Load<Sprite>(imagePath);
 
         ItemImage.sprite=newSprite;
+        Health.text=Item.AllItemsList[ItemTier].ItemHealth.ToString();
+        Damage.text=Item.AllItemsList[ItemTier].ItemDamage.ToString();
+        Armor.text=Item.AllItemsList[ItemTier].ItemArmor.ToString();
+        Speed.text=Item.AllItemsList[ItemTier].ItemSpeed.ToString();
 
-        Armor.text=Item.AllItemsList[2].ItemArmor.ToString();
+        ItemName.text=Item.AllItemsList[ItemTier].ItemName.ToString();
+        ItemDescription.text=Item.AllItemsList[ItemTier].ItemDescription.ToString();
+
+
+        if(!PlayerDataClass.PlayerItemList.Contains(ItemTier)){
+            PlayerDataClass.PlayerItemList.Add(ItemTier);
+            Debug.Log("Inserted in playerlist - " + ItemTier);
+        }
+        else{
+            Debug.Log("Playerlist already has - " + ItemTier);
+        }
 
         //+0 +10 +20
         //int randomNumber = Random.Range(0, 2);

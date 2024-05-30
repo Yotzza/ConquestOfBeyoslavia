@@ -227,10 +227,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5172f2ddede16ae4db379bdb7f4e16ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 4
   speed: 4
-  damage: 100
-  expdrop: 50
+  damage: 4
+  expdrop: 260
 --- !u!95 &303753251887884453
 Animator:
   serializedVersion: 5

@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerDataClass.ExpChecker();
         CheckCharacterHealth();
         currentTime-=Time.deltaTime;
         WaveTimer();

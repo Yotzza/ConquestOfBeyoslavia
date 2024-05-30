@@ -1070,6 +1070,7 @@ GameObject:
   - component: {fileID: 788958540}
   - component: {fileID: 788958543}
   - component: {fileID: 788958544}
+  - component: {fileID: 788958545}
   m_Layer: 5
   m_Name: WeaponButton
   m_TagString: Untagged
@@ -1217,6 +1218,19 @@ MonoBehaviour:
   EquipmentLevel: 0
   targetImage: {fileID: 788958541}
   imageType: 0
+--- !u!114 &788958545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788958538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471221abf13e5a479347d64e37e1355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponbutton: {fileID: 788958541}
 --- !u!1 &821611924
 GameObject:
   m_ObjectHideFlags: 0

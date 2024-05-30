@@ -24,11 +24,13 @@ public  class PlayerDataClass
     public static void SetPlayerData()
     {
 
-        PlayerItemList.Add(0);
-    PlayerItemList.Add(3);
+        
+    
 
-Debug.Log(PlayerDataClass.PlayerItemList[0]);
+
         // SVE OVO MORA IDE IZ DATABAZE
+        PlayerItemList.Clear();
+        PlayerItemList.Add(0);
         PlayerFaceID=0;
         PlayerColorHex="#FF5733";
         PlayerHealth = 200;

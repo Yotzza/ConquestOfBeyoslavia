@@ -39,6 +39,7 @@ public class CharacterDataClass
 
     public static void SetCharacterData()
     {
+        
         CharacterHealth = PlayerDataClass.PlayerHealth + GetCharacterEquipmentSkills(1);
         CharacterDamage = PlayerDataClass.PlayerDamage + GetCharacterEquipmentSkills(2);
         CharacterArmor = PlayerDataClass.PlayerArmor + GetCharacterEquipmentSkills(3);
@@ -72,11 +73,7 @@ public class CharacterDataClass
 
     }
 
-    public static void Die()
-    {
-
-
-    }
+    
 
 
 

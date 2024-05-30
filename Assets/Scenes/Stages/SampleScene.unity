@@ -2274,7 +2274,7 @@ MonoBehaviour:
   enemyPrefab1: {fileID: 3488514399024152652, guid: 8fc6f6b8693cf7e49b1c10783214f3a3, type: 3}
   enemyPrefab2: {fileID: 0}
   enemyPrefab3: {fileID: 0}
-  timeBetweenSpawns: 5
+  timeBetweenSpawns: 0.5
 --- !u!1 &1914261769
 GameObject:
   m_ObjectHideFlags: 0
