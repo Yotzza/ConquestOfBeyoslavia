@@ -7,6 +7,7 @@ using UnityEngine;
 public  class PlayerDataClass
 {
 
+    public static int PlayerID;
     public static List<int> PlayerItemList = new();
     public static int PlayerHealth;
     public static int PlayerDamage;

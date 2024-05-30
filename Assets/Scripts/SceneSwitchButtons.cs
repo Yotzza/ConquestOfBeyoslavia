@@ -32,6 +32,17 @@ public class SceneSwitchButtons : MonoBehaviour
             PlayerDataClass.PlayerStage+=1;
         }
     }
+
+    public static void LoadLogin()
+    {
+        SceneManager.LoadScene("Login");
+    }
+    public static void LoadRegister()
+    {
+        SceneManager.LoadScene("RegisterPlayer");
+    }
+
+
     
     public static void LoadYouDiedScene()
     {
@@ -79,6 +90,10 @@ public class SceneSwitchButtons : MonoBehaviour
         if(PlayerDataClass.PlayerStage==0){
             PlayerDataClass.PlayerStage=1;
         }
+    }
+    public static void LoadPlayerMenuSlots()
+    {
+        SceneManager.LoadScene("PlayerSlot Menu");
     }
 
 
