@@ -53,7 +53,7 @@ public class SceneSwitchButtons : MonoBehaviour
     public static void LoadLevelSelection()
     {
         SceneManager.LoadScene("LevelSelection");
-        DatabaseManager.SavePlayerData();
+        
     }
 
     //LEVELS
@@ -131,14 +131,16 @@ public class SceneSwitchButtons : MonoBehaviour
     public void ExitGame()
     {
         // If we are running in a standalone build of the game
-        #if UNITY_STANDALONE
+        //#if UNITY_STANDALONE
             Application.Quit();
-        #endif
+            DatabaseManager.SavePlayerData();
+        //#endif
 
         // If we are running in the editor
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        #endif
+        //#if UNITY_EDITOR
+        //    UnityEditor.EditorApplication.isPlaying = false;
+        //    DatabaseManager.SavePlayerData();
+       // #endif
     }
     
 }

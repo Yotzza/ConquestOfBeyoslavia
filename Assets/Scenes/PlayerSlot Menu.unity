@@ -635,7 +635,6 @@ GameObject:
   - component: {fileID: 379488847}
   - component: {fileID: 379488846}
   - component: {fileID: 379488845}
-  - component: {fileID: 379488844}
   m_Layer: 5
   m_Name: DeleteButton (1)
   m_TagString: Untagged
@@ -663,21 +662,6 @@ RectTransform:
   m_AnchoredPosition: {x: 77.919685, y: 34.4}
   m_SizeDelta: {x: 30.9891, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &379488844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379488842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24d6632f402c5e3409892273faf65608, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerID: 2
-  SlotImage: {fileID: 1474625103}
-  SlotText: {fileID: 1103556810}
 --- !u!114 &379488845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -722,9 +706,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 379488844}
+      - m_Target: {fileID: 1474625101}
         m_TargetAssemblyTypeName: SlotChanger, Assembly-CSharp
-        m_MethodName: ClickDelete
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1758,7 +1742,6 @@ GameObject:
   - component: {fileID: 1620272039}
   - component: {fileID: 1620272038}
   - component: {fileID: 1620272037}
-  - component: {fileID: 1620272036}
   m_Layer: 5
   m_Name: DeleteButton (3)
   m_TagString: Untagged
@@ -1786,21 +1769,6 @@ RectTransform:
   m_AnchoredPosition: {x: 77.919685, y: -65.5}
   m_SizeDelta: {x: 30.9891, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1620272036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620272034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24d6632f402c5e3409892273faf65608, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerID: 4
-  SlotImage: {fileID: 291564189}
-  SlotText: {fileID: 2141897761}
 --- !u!114 &1620272037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1845,9 +1813,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1620272036}
+      - m_Target: {fileID: 291564187}
         m_TargetAssemblyTypeName: SlotChanger, Assembly-CSharp
-        m_MethodName: ClickDelete
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2462,7 +2430,6 @@ GameObject:
   - component: {fileID: 2081222421}
   - component: {fileID: 2081222420}
   - component: {fileID: 2081222419}
-  - component: {fileID: 2081222418}
   m_Layer: 5
   m_Name: DeleteButton (2)
   m_TagString: Untagged
@@ -2490,21 +2457,6 @@ RectTransform:
   m_AnchoredPosition: {x: 77.919685, y: -14.9}
   m_SizeDelta: {x: 30.9891, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2081222418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081222416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24d6632f402c5e3409892273faf65608, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerID: 3
-  SlotImage: {fileID: 1751473131}
-  SlotText: {fileID: 1596515892}
 --- !u!114 &2081222419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2549,9 +2501,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2081222418}
+      - m_Target: {fileID: 1751473129}
         m_TargetAssemblyTypeName: SlotChanger, Assembly-CSharp
-        m_MethodName: ClickDelete
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

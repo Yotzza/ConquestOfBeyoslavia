@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   speed: 4
-  damage: 4
+  damage: 10
   expdrop: 260
 --- !u!95 &303753251887884453
 Animator:

@@ -42,8 +42,19 @@ public class EnemyManager : MonoBehaviour
     void SpawnEnemy()
     {
         //Quaternion ignorise rotacije.
-        var e = Instantiate(enemyPrefab1, RandomPosition(), Quaternion.identity);
-        e.transform.SetParent(enemiesParent);
+        if (CharacterDataClass.CharacterStage<3){
+            var e = Instantiate(enemyPrefab1, RandomPosition(), Quaternion.identity);
+            e.transform.SetParent(enemiesParent);
+        }
+        else if(CharacterDataClass.CharacterStage>=3 &&CharacterDataClass.CharacterStage<6){
+            var e = Instantiate(enemyPrefab2, RandomPosition(), Quaternion.identity);
+            e.transform.SetParent(enemiesParent);
+        }
+        else{
+            var e = Instantiate(enemyPrefab3, RandomPosition(), Quaternion.identity);
+            e.transform.SetParent(enemiesParent);
+        }
+        
     }
 
     public void DestroyAllEnemies()
