@@ -16,7 +16,7 @@ public class Map : MonoBehaviour
         // Get the transform of the current GameObject
         Transform parentTransform = this.transform;
        
-        for (int i = 0; i < 9 ; i++)
+        for (int i = 0; i < 10 ; i++)
         {
             // Get the child at the current index
             

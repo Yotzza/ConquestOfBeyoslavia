@@ -53,11 +53,11 @@ public class CharacterDataClass
     public static void CharacterTakeDamage(int damage)
     {
 
-        float armorsum = PlayerDataClass.PlayerArmor + CharacterArmor;
-        double damageReduction = 1.0 - Mathf.Abs(armorsum / 100);
-
+        
+       float damageReduction = 1.0f - (float)CharacterArmor / 100.0f;
         Debug.Log(damageReduction);
-        CharacterHealth -= Mathf.RoundToInt(damage * (float)damageReduction); ;
+        //Debug.Log(Mathf.RoundToInt(damage * (float)damageReduction));
+        CharacterHealth -= Mathf.RoundToInt(damage * (float)damageReduction);
     }
 
     public static void CharacterHeal(int health)

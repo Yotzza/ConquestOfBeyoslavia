@@ -21,7 +21,7 @@ public class Register : MonoBehaviour
             PlayerDataClass.PlayerColorHex="#ffffff";
             PlayerDataClass.PlayerHealth=100;
             PlayerDataClass.PlayerDamage=10;
-            PlayerDataClass.PlayerSpeed=0;
+            PlayerDataClass.PlayerSpeed=5;
             PlayerDataClass.PlayerExp=0;
             PlayerDataClass.PlayerStage=0;
             PlayerDataClass.PlayerSkillPoints=0;

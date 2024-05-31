@@ -97,7 +97,7 @@ using (var conn = new SqliteConnection(connectionString))
             }
             
         }
-        //Debug.Log(PlayerDataClass.PlayerItemList[0]);
+        
         
     } 
     //uradjeno
