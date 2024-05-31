@@ -7,7 +7,9 @@ public class SceneSwitchButtons : MonoBehaviour
 {
     public static void LoadInventory()
     {
+
         SceneManager.LoadScene("Inventory");
+        
     }
     public static void LoadWeapons()
     {
@@ -51,6 +53,7 @@ public class SceneSwitchButtons : MonoBehaviour
     public static void LoadLevelSelection()
     {
         SceneManager.LoadScene("LevelSelection");
+        DatabaseManager.SavePlayerData();
     }
 
     //LEVELS

@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
 
     public void Hit()
     {
-        currentHealth -= 20;
+        currentHealth -= CharacterDataClass.CharacterDamage;
         Debug.Log(currentHealth);
         anim.SetTrigger("hit");
         

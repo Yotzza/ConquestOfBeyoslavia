@@ -28,6 +28,25 @@ public class SlotChanger : MonoBehaviour
             SceneSwitchButtons.LoadLogin();
         }
     }
+
+    public void ClickDelete(){
+        //PlayerDataClass.PlayerID=PlayerID;
+        if (Used==false){
+            //Debug.Log(PlayerDataClass.PlayerID);
+            Debug.Log("non used slot");
+            //SceneSwitchButtons.LoadRegister();
+            
+                       
+        }
+        else if(Used==true){
+            //Debug.Log(PlayerDataClass.PlayerID);
+            Debug.Log("USED slot");
+            DatabaseManager.DeletePlayer(PlayerID);
+            DatabaseManager.SlotsOccupancy(PlayerID,SlotImage,SlotText);
+            Used=false;
+
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {

@@ -11,7 +11,7 @@ public class DatabaseManager : MonoBehaviour
     void Start()
     {
         CreateDatabaseAndTable();
-        //AddPlayerData(5, "dfg", 1, 1, 1, 1, 1, 1, 1, 1,"abc","bejo");
+        //AddPlayerData(4,5, "dfg", 1, 1, 1, 1, 1, 1, 1, 1,"abc","jobe");
         //FetchPlayerData(2);
         //Debug.Log(PlayerDataClass.PlayerID);
     }
@@ -44,6 +44,43 @@ public class DatabaseManager : MonoBehaviour
         }
     }
 
+    public static void DeletePlayer(int playerid){
+        
+
+using (var conn = new SqliteConnection(connectionString))
+        {
+            try
+            {
+                conn.Open();
+                SqliteCommand cmd = new SqliteCommand("DELETE FROM PlayerData WHERE PlayerID =" + playerid, conn);
+                SqliteDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+                    PlayerDataClass.PlayerID=reader.GetInt32(reader.GetOrdinal("PlayerID"));
+                    PlayerDataClass.PlayerFaceID = reader.GetInt32(reader.GetOrdinal("PlayerFaceID"));
+                    PlayerDataClass.PlayerColorHex = reader.GetString(reader.GetOrdinal("PlayerColorHex"));
+                    PlayerDataClass.PlayerHealth = reader.GetInt32(reader.GetOrdinal("PlayerHealth"));
+                    PlayerDataClass.PlayerDamage = reader.GetInt32(reader.GetOrdinal("PlayerDamage"));
+                    PlayerDataClass.PlayerArmor = reader.GetInt32(reader.GetOrdinal("PlayerArmor"));
+                    PlayerDataClass.PlayerSpeed = reader.GetInt32(reader.GetOrdinal("PlayerSpeed"));
+                    PlayerDataClass.PlayerStage = reader.GetInt32(reader.GetOrdinal("PlayerStage"));
+                    PlayerDataClass.PlayerExp = reader.GetInt32(reader.GetOrdinal("PlayerExp"));
+                    PlayerDataClass.PlayerSkillPoints = reader.GetInt32(reader.GetOrdinal("PlayerSkillPoints"));
+                    PlayerDataClass.PlayerLevel = reader.GetInt32(reader.GetOrdinal("PlayerLevel"));
+
+                    
+                    
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("Error fetching player data: " + ex.Message);
+            }
+        }
+    }
     //uradjeno
     public static void FetchPlayerData(int playerid)
     {
@@ -244,8 +281,9 @@ public class DatabaseManager : MonoBehaviour
             }
         }
     }
-    public void SavePlayerData()
+    public static void SavePlayerData()
     {
+        
         using (SqliteConnection conn = new SqliteConnection(connectionString))
         {
             try
@@ -264,7 +302,7 @@ public class DatabaseManager : MonoBehaviour
                         PlayerExp = @exp, 
                         PlayerSkillPoints = @skillPoints, 
                         PlayerLevel = @level
-                    WHERE PlayerID = 1";
+                    WHERE PlayerID =" + PlayerDataClass.PlayerID;
 
                 SqliteCommand cmd = new SqliteCommand(query, conn);
                 cmd.Parameters.AddWithValue("@faceID", PlayerDataClass.PlayerFaceID);
@@ -287,7 +325,7 @@ public class DatabaseManager : MonoBehaviour
         }
     }
 
-    public void AddPlayerData(int playerID,int faceID, string colorHex, int health, int damage, int armor, int speed, int stage, int exp, int skillPoints, int level,string password, string username)
+    public static void AddPlayerData(int playerID,int faceID, string colorHex, int health, int damage, int armor, int speed, int stage, int exp, int skillPoints, int level,string password, string username)
     {
         using (var conn = new SqliteConnection(connectionString))
         {
