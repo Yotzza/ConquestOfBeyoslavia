@@ -2578,9 +2578,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6bb400685e927a469f992ecd2506dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab1: {fileID: 3488514399024152652, guid: 8fc6f6b8693cf7e49b1c10783214f3a3, type: 3}
-  enemyPrefab2: {fileID: 0}
-  enemyPrefab3: {fileID: 0}
+  enemyPrefab1: {fileID: 3488514399024152652, guid: 3930d78520f6dda47bfef237d15955d6, type: 3}
+  enemyPrefab2: {fileID: 3488514399024152652, guid: 8fc6f6b8693cf7e49b1c10783214f3a3, type: 3}
+  enemyPrefab3: {fileID: 3488514399024152652, guid: 3d8acdc61dc2ba54da8626c15ce367f7, type: 3}
   timeBetweenSpawns: 0.5
 --- !u!1 &1914261769
 GameObject:

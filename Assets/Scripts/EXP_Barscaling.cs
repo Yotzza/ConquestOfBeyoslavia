@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class EXPBarScaling : MonoBehaviour
 {
-    public UnityEngine.UI.Image targetImage;
+    public Image targetImage;
     public Text uiText;
     public void changer()
     {

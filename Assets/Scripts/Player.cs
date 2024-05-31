@@ -6,7 +6,7 @@ using System;
 public class Player : MonoBehaviour
 {
     public SpriteRenderer weapon;
-    [SerializeField] float moveSpeed = 6;
+    [SerializeField] float moveSpeed;
 
     Animator anim;
     Rigidbody2D rb;
@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        moveSpeed=CharacterDataClass.CharacterSpeed;
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         WeaponSpriteChanger();

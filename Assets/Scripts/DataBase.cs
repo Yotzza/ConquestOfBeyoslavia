@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using Mono.Data.Sqlite;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,7 +38,8 @@ public class DatabaseManager : MonoBehaviour
                     PlayerSkillPoints INTEGER,
                     PlayerLevel INTEGER,
                     PlayerUsername TEXT,
-                    PlayerPassword TEXT
+                    PlayerPassword TEXT,
+                    PlayerItemList TEXT
                 )";
             SqliteCommand cmd = new SqliteCommand(createTableQuery, conn);
             cmd.ExecuteNonQuery();
@@ -55,25 +58,7 @@ using (var conn = new SqliteConnection(connectionString))
                 SqliteCommand cmd = new SqliteCommand("DELETE FROM PlayerData WHERE PlayerID =" + playerid, conn);
                 SqliteDataReader reader = cmd.ExecuteReader();
 
-                if (reader.Read())
-                {
-
-                    PlayerDataClass.PlayerID=reader.GetInt32(reader.GetOrdinal("PlayerID"));
-                    PlayerDataClass.PlayerFaceID = reader.GetInt32(reader.GetOrdinal("PlayerFaceID"));
-                    PlayerDataClass.PlayerColorHex = reader.GetString(reader.GetOrdinal("PlayerColorHex"));
-                    PlayerDataClass.PlayerHealth = reader.GetInt32(reader.GetOrdinal("PlayerHealth"));
-                    PlayerDataClass.PlayerDamage = reader.GetInt32(reader.GetOrdinal("PlayerDamage"));
-                    PlayerDataClass.PlayerArmor = reader.GetInt32(reader.GetOrdinal("PlayerArmor"));
-                    PlayerDataClass.PlayerSpeed = reader.GetInt32(reader.GetOrdinal("PlayerSpeed"));
-                    PlayerDataClass.PlayerStage = reader.GetInt32(reader.GetOrdinal("PlayerStage"));
-                    PlayerDataClass.PlayerExp = reader.GetInt32(reader.GetOrdinal("PlayerExp"));
-                    PlayerDataClass.PlayerSkillPoints = reader.GetInt32(reader.GetOrdinal("PlayerSkillPoints"));
-                    PlayerDataClass.PlayerLevel = reader.GetInt32(reader.GetOrdinal("PlayerLevel"));
-
-                    
-                    
-                    
-                }
+                
             }
             catch (Exception ex)
             {
@@ -81,6 +66,40 @@ using (var conn = new SqliteConnection(connectionString))
             }
         }
     }
+
+    public static string TurnIntoSQLList(){
+        string playersqllist="";
+        for (int i = 0; i < 30; i++)
+        {
+            if (PlayerDataClass.PlayerItemList.Contains(i)){
+                 playersqllist+= 1;
+            }
+            else{
+                playersqllist+= 0;
+            }
+            
+        }
+        return playersqllist;
+    } 
+    public static void LoadPlayerList(string sqlplayerlist){
+        
+        Debug.Log(sqlplayerlist.Length);
+        for (int i = 0; i < sqlplayerlist.Length; i++)
+        {
+            char c = sqlplayerlist[i];
+    
+            if (c == '1'){
+                Debug.Log("DAMN NIGGA");
+                 PlayerDataClass.PlayerItemList.Add(i);
+            }
+            else{
+                
+            }
+            
+        }
+        //Debug.Log(PlayerDataClass.PlayerItemList[0]);
+        
+    } 
     //uradjeno
     public static void FetchPlayerData(int playerid)
     {
@@ -107,7 +126,12 @@ using (var conn = new SqliteConnection(connectionString))
                     PlayerDataClass.PlayerExp = reader.GetInt32(reader.GetOrdinal("PlayerExp"));
                     PlayerDataClass.PlayerSkillPoints = reader.GetInt32(reader.GetOrdinal("PlayerSkillPoints"));
                     PlayerDataClass.PlayerLevel = reader.GetInt32(reader.GetOrdinal("PlayerLevel"));
-
+                    PlayerDataClass.PlayerItemList.Clear();
+                    //Debug.Log(reader.GetOrdinal("PlayerItemList"));
+                    string d1=reader.GetString(reader.GetOrdinal("PlayerItemList"));
+                    Debug.Log(d1);
+                    LoadPlayerList(d1);
+                    Debug.Log(TurnIntoSQLList());
                     
                     
                     
@@ -297,7 +321,8 @@ using (var conn = new SqliteConnection(connectionString))
                         PlayerStage = @stage, 
                         PlayerExp = @exp, 
                         PlayerSkillPoints = @skillPoints, 
-                        PlayerLevel = @level
+                        PlayerLevel = @level,
+                        PlayerItemList=@playeritemlist
                     WHERE PlayerID =" + PlayerDataClass.PlayerID;
 
                 SqliteCommand cmd = new SqliteCommand(query, conn);
@@ -311,6 +336,9 @@ using (var conn = new SqliteConnection(connectionString))
                 cmd.Parameters.AddWithValue("@exp", PlayerDataClass.PlayerExp);
                 cmd.Parameters.AddWithValue("@skillPoints", PlayerDataClass.PlayerSkillPoints);
                 cmd.Parameters.AddWithValue("@level", PlayerDataClass.PlayerLevel);
+                
+                cmd.Parameters.AddWithValue("@playeritemlist", TurnIntoSQLList());
+                Debug.Log(TurnIntoSQLList());
 
                 cmd.ExecuteNonQuery();
             }
@@ -321,7 +349,7 @@ using (var conn = new SqliteConnection(connectionString))
         }
     }
 
-    public static void AddPlayerData(int playerID,int faceID, string colorHex, int health, int damage, int armor, int speed, int stage, int exp, int skillPoints, int level,string password, string username)
+    public static void AddPlayerData(int playerID,int faceID, string colorHex, int health, int damage, int armor, int speed, int stage, int exp, int skillPoints, int level,string password, string username,string playeritemlist)
     {
         using (var conn = new SqliteConnection(connectionString))
         {
@@ -342,7 +370,8 @@ using (var conn = new SqliteConnection(connectionString))
                         PlayerSkillPoints, 
                         PlayerLevel,
                         PlayerUsername,
-                        PlayerPassword
+                        PlayerPassword,
+                        PlayerItemList
                         
                     ) VALUES (
                         @playerID,
@@ -357,7 +386,8 @@ using (var conn = new SqliteConnection(connectionString))
                         @skillPoints, 
                         @level,
                         @username,
-                        @password
+                        @password,
+                        @playeritemlist
                     )";
 
                 using (SqliteCommand cmd = new SqliteCommand(query, conn))
@@ -375,6 +405,7 @@ using (var conn = new SqliteConnection(connectionString))
                     cmd.Parameters.AddWithValue("@level", level);
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@password", password);
+                    cmd.Parameters.AddWithValue("@playeritemlist", playeritemlist);
 
                     cmd.ExecuteNonQuery();
                     Debug.Log("Player data added successfully.");

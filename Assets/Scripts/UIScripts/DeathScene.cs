@@ -10,7 +10,7 @@ public class DeathScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text1.text="Stage: " + CharacterDataClass.CharacterStage.ToString();
+        text1.text="Stage: " + (CharacterDataClass.CharacterStage + 1).ToString();
     }
 
     // Update is called once per frame

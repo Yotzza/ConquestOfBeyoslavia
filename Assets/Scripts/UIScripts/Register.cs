@@ -16,7 +16,7 @@ public class Register : MonoBehaviour
         else{
           nez=  DatabaseManager.PlayerUsernameChecker(usernameinput.text);
           if (nez==false){
-            DatabaseManager.AddPlayerData(PlayerDataClass.PlayerID,0,"#ffffff",100,10,0,5,0,0,0,0,passwordinput.text,usernameinput.text);
+            DatabaseManager.AddPlayerData(PlayerDataClass.PlayerID,0,"#ffffff",100,10,0,5,0,0,0,0,passwordinput.text,usernameinput.text,"000000000000000000000000000000");
             PlayerDataClass.PlayerFaceID=0;
             PlayerDataClass.PlayerColorHex="#ffffff";
             PlayerDataClass.PlayerHealth=100;
