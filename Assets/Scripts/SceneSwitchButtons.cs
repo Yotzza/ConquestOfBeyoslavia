@@ -67,33 +67,57 @@ public class SceneSwitchButtons : MonoBehaviour
     
     public static void LoadStage2()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Stage2");
         CharacterDataClass.CharacterStage=1;
         
     }
 
     public static void LoadStage3()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Stage3");
         CharacterDataClass.CharacterStage=2;
         
     }
 
     public static void LoadStage4()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Stage4");
         CharacterDataClass.CharacterStage=3;
         
     }
 
     public static void LoadStage5()
     {
-        SceneManager.LoadScene("SampleScene");
-        CharacterDataClass.CharacterStage=0;
-        if(PlayerDataClass.PlayerStage==0){
-            PlayerDataClass.PlayerStage=1;
-        }
+        SceneManager.LoadScene("Stage5");
+        CharacterDataClass.CharacterStage=4;
+        
     }
+    public static void LoadStage6()
+    {
+        SceneManager.LoadScene("Stage6");
+        CharacterDataClass.CharacterStage=5;
+        
+    }
+    public static void LoadStage7()
+    {
+        SceneManager.LoadScene("Stage7");
+        CharacterDataClass.CharacterStage=6;
+        
+    }
+    public static void LoadStage8()
+    {
+        SceneManager.LoadScene("Stage8");
+        CharacterDataClass.CharacterStage=7;
+        
+    }
+    public static void LoadStage9()
+    {
+        SceneManager.LoadScene("Stage9");
+        CharacterDataClass.CharacterStage=8;
+        
+    }
+
+
     public static void LoadPlayerMenuSlots()
     {
         SceneManager.LoadScene("PlayerSlot Menu");

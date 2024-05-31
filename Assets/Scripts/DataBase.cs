@@ -159,10 +159,6 @@ using (var conn = new SqliteConnection(connectionString))
 
     }
     
-
-    public static void RegisterPlayer(){
-        
-    }
     public static void PlayerLoginScreen(Text usernameText){
         using (SqliteConnection conn = new SqliteConnection(connectionString))
         {
