@@ -89,7 +89,7 @@ using (var conn = new SqliteConnection(connectionString))
             char c = sqlplayerlist[i];
     
             if (c == '1'){
-                Debug.Log("DAMN NIGGA");
+                
                  PlayerDataClass.PlayerItemList.Add(i);
             }
             else{

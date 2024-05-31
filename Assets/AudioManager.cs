@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("Ucitana scena: " + scene.path);
-        if (scene.path == "Assets/Scenes/Stages/SampleScene.unity")
+        if (scene.path == "Assets/Scenes/Stages/SampleScene.unity" || scene.path == "Assets/Scenes/Stages/stage2.unity" || scene.path == "Assets/Scenes/Stages/stage3.unity" || scene.path == "Assets/Scenes/Stages/stage4.unity" || scene.path == "Assets/Scenes/Stages/stage5.unity" || scene.path == "Assets/Scenes/Stages/stage6.unity" || scene.path == "Assets/Scenes/Stages/stage7.unity" || scene.path == "Assets/Scenes/Stages/stage8.unity" || scene.path == "Assets/Scenes/Stages/stage9.unity")
         {
             if (musicSource.clip != specialSceneMusic)
             {
